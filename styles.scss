@@ -1,18 +1,22 @@
 
-$base-font: serif;
-$base-size: 17;
-$leading: 27;
+$base-font  : serif;                  ; $page-width:        90%;
+$base-size  : 17;                     ; $max-width:         40rem;
+$leading    : 27;
 
-$page-width:        90%;
-$max-width:         40rem;
-
-@mixin handheld {
-  @media only screen and (max-width: 480px) {
+@mixin large {
+  @media only screen and (min-width: 1110px) {
     @content;
   }
 }
-@mixin laptop {
-  @media only screen and (max-width: 1280px) {
+
+@mixin medium {
+  @media only screen and (min-width: 481px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media only screen and (max-width: 480px) {
     @content;
   }
 }
@@ -22,7 +26,15 @@ html {
   color: white;
   text-align: center;
 
-  @include handheld {
+  @include small {
+    font-size: 0.5rem;
+  }
+
+  @include medium {
+    font-size: 0.75rem;
+  }
+
+  @include large {
     font-size: 1rem;
   }
 }
@@ -32,7 +44,6 @@ body {
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
-
 
 header, main, footer {
   max-width: $max-width;
@@ -57,14 +68,14 @@ h4 {
 }
 
 @keyframes ohboi {
-    0% {
-      background: #F8AB44;
-    }
-    50% {
-      background: #f08075;
+  0% {
+    background: #F8AB44;
+  }
+  50% {
+    background: #f08075;
 
-    }
-    100% {
-      background: #F8AB44;
-    }
+  }
+  100% {
+    background: #F8AB44;
+  }
 }
