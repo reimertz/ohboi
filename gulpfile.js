@@ -19,7 +19,7 @@ gulp.task('jade', function () {
     .pipe(gulp.dest('./.tmp/'));
 });
 
-gulp.task('default', ['sass'], function(){
+gulp.task('default', ['sass', 'jade'], function(){
   var server = gls.static(['./', '.tmp/'], 3000);
   server.start();
 
