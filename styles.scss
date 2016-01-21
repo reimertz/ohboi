@@ -1,5 +1,6 @@
+
 $base-font  : serif;                  ; $page-width:        90%;
-$base-size  : 17;                     ; $max-width:         70rem;
+$base-size  : 17;                     ; $max-width:         40rem;
 $leading    : 27;
 
 @mixin large {
@@ -20,17 +21,9 @@ $leading    : 27;
   }
 }
 
-@mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
-}
-
-
 html {
   font: normal #{$base-size}px/#{$leading / $base-size} $base-font;
-  font-family: 'Open Sans';
+  color: white;
   text-align: center;
 
   @include small {
@@ -47,63 +40,16 @@ html {
 }
 
 body {
-  background: #FFE11A;
-  color: #1F8A70;
-
-  &.date {
-    background: #1F8A70;
-  color: #FFE11A;
-  }
+  animation-name: ohboi;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
-
-
 
 header, main, footer {
   max-width: $max-width;
   width: $page-width;
   margin: 0 auto;
 }
-
-
-@include placeholder {
-  font-family: 'Open Sans';
-  color: #FFE11A;
-  font-weight: 700;
-  font-size: 7rem;
-  content: 'What #?';
-
-}
-
-input {
-  text-align: center;
-  font-family: 'Open Sans';
-  font-weight: 700;
-  font-size: 7rem;
-  color: #FFE11A;
-  background: #1F8A70;
-  width: 100%;
-  border: none;
-}
-
-.button {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 7rem;
-  font-family: 'Open Sans';
-  background-color: #FFE11A;
-  color: #1F8A70;
-  padding: 1rem;
-}
-
-.button:hover {
-  transform: scale(1.5);
-  transition-duration: 100ms;
-}
-
-a {
-  text-decoration: none !important;
-}
-
 
 h1 {
   font-size: 7rem;
@@ -119,4 +65,17 @@ h3 {
 
 h4 {
   font-size: 2rem;
+}
+
+@keyframes ohboi {
+  0% {
+    background: #F8AB44;
+  }
+  50% {
+    background: #f08075;
+
+  }
+  100% {
+    background: #F8AB44;
+  }
 }
